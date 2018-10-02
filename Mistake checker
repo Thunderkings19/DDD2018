@@ -1,0 +1,21 @@
+mistakes = ["hello", "bye", "must", "holland", "Kings", "fuck"]
+correct = ["dear", "yours sincerely", "can", "The Netherlands", "Konings", "potverdorie"]
+sentence = input("Enter your sentence here")
+
+words = sentence.split()
+
+wrong = True
+
+index = 0
+
+for word in words:
+    
+    if word in mistakes:
+                
+            print(word + " is wrong. the right word is " + str(correct[index]))
+            wrong = False
+            break
+       
+    if not wrong:
+        index = index + 1
+        print("Your sentence is correct")
