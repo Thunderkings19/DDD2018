@@ -1,0 +1,12 @@
+f = open("footballers.csv")
+F = open("footballersadvanced.txt", "w")
+for line in f:
+    line = line.split(",")
+    player = line[0].strip()
+    club = line[1].strip()
+    value = line[2].strip()
+    F.write(player + " is a player of " + club + " and his value is " + value + " million euros.\n") 
+
+F.close()
+f.close()
+
