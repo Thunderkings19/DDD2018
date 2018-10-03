@@ -17,9 +17,5 @@ for person in friends:
  
     
     
-#index = 0
-#for name in names:
- #   snack = snacks[index]
-  #  index = index + 1
-   # print(name + " likes " + snack)k
+
     
