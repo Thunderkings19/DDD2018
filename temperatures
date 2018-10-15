@@ -13,4 +13,7 @@ df["freezing"] = df["temperature"] <= 0
 
 df["freezing"].head(10)
 
+freezing = df[df["temperatures.csv"] <= 0]
+freezing.head(10)
+
 df["temperature"].plot()
