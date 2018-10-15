@@ -1,0 +1,15 @@
+import pandas as pd
+df = pd.read_csv("temperatures.csv")
+
+df["temperature"].head()
+
+df["temperature"].describe()
+
+df[df["temperature"] > 22]
+
+df[df["temperature"] < -3]
+
+freezing = df[df["temperature"]<= 0]
+freezing.head(10)
+
+df["temperature"].plot()
