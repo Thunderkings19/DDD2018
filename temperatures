@@ -9,7 +9,8 @@ df[df["temperature"] > 22]
 
 df[df["temperature"] < -3]
 
-freezing = df[df["temperature"]<= 0]
-freezing.head(10)
+df["freezing"] = df["temperature"] <= 0
+
+df["freezing"].head(10)
 
 df["temperature"].plot()
