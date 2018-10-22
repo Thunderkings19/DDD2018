@@ -1,0 +1,31 @@
+#https://www.hethoekkie-almerehaven.nl/
+with open("hoekkie.html") as f:
+    page = BeautifulSoup(f, "lxml")
+
+title = page.select("title")[0].get_text()
+header = page.select("h1")[1].get_text()
+print(title)
+print("")
+print(header)
+print("")
+headings = page.select("h3")[0:9]
+for heading in headings:
+    print(heading.get_text().strip().upper())
+print("")
+
+menu = page.select("li")
+
+for products in menu:
+    price = page.select(".price")
+    list = page.select("b")
+    print(products.get_text().strip())
+    index = index + 1
+    
+#for name in item:  
+ #   print(name.get_text().strip())    
+#for value in price:
+ #   print(value.get_text().strip())
+
+
+
+
