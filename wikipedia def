@@ -1,0 +1,19 @@
+import requests
+
+title = input("Give an article you want to look up: ").strip()
+value = input("Do you want an extract or description?").strip().lower()
+url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
+req = requests.get(url)
+data = req.json()
+
+def request(title,value):
+    if req.status_code != 200:
+        return f"We got an error: {req.status_code}"
+        exit()
+    elif value == "extract":
+        return data["extract"]
+    elif value == "description":
+        return data["description"]
+
+dat = request(title,value)
+print(dat)
