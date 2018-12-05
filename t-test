@@ -1,0 +1,28 @@
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.stats import ttest_ind
+
+sns.catplot(x='gender',y='instagram_followers',data=df, kind="bar")
+plt.title('Amount of followers on instagram per gender')
+plt.ylabel('Followers Instagram')
+plt.xlabel('Gender')
+plt.show()
+
+male = df[df['gender']=='male']
+female = df[df['gender']=='female']
+
+male_mean = male['instagram_followers'].mean()
+female_mean = female['instagram_followers'].mean()
+
+print(f'The mean followers for male is {male_mean}')
+print(f'The mean followers for female is {female_mean}')
+
+ttest_ind(male['instagram_followers'], female['instagram_followers'], nan_policy='omit')
+
+#H0: the (population) mean followers is the same between male and female
+#H1: the (population) mean followers is different between male and female
+
+#H: The amount of instagram followers for male is bigger then female
+
+#p>0,05 so there is a difference in the amount of followers on instagram per gender
